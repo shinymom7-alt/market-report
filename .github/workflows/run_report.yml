@@ -22,7 +22,7 @@ jobs:
 
       - name: 리포트 실행
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GMAIL_USER:        ${{ secrets.GMAIL_USER }}
           GMAIL_PASSWORD:    ${{ secrets.GMAIL_PASSWORD }}
           RECIPIENTS:        ${{ secrets.RECIPIENTS }}
