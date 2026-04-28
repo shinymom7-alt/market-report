@@ -5,51 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마켓 인사이드 2026년 04월 28일</title>
 <style>
-  body { font-family: 'Apple SD Gothic Neo', sans-serif; max-width: 800px;
-          margin: 0 auto; padding: 20px; background: #f7f7f7; color: #222; }
-  h1   { font-size: 24px; border-bottom: 3px solid #222; padding-bottom: 8px; }
-  h2   { font-size: 18px; background: #222; color: #fff;
-          padding: 8px 14px; border-radius: 4px; }
-  .card { background: #fff; border-radius: 8px; padding: 20px;
-           margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-  table { width: 100%; border-collapse: collapse; }
-  td, th { padding: 8px 12px; border-bottom: 1px solid #eee; font-size: 15px; }
-  th    { font-weight: 600; color: #555; }
-  .analysis { line-height: 1.9; font-size: 15px; }
-  .date { color: #888; font-size: 14px; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f4f4f4;color:#222;padding:20px}
+  .wrap{max-width:780px;margin:0 auto}
+  .header{background:#111;color:#fff;padding:20px 24px;border-radius:10px 10px 0 0;margin-bottom:2px}
+  .header h1{font-size:22px;font-weight:700;letter-spacing:-0.5px}
+  .header .sub{font-size:13px;color:#aaa;margin-top:4px}
+  .card{background:#fff;padding:20px 24px;margin-bottom:2px}
+  .card:last-child{border-radius:0 0 10px 10px}
+  .card-title{font-size:14px;font-weight:700;background:#222;color:#fff;display:inline-block;padding:4px 12px;border-radius:4px;margin-bottom:16px}
+  .index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+  .macro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:4px}
+  .idx-box{background:#f8f8f8;border-radius:8px;padding:10px 14px}
+  .idx-name{font-size:12px;color:#888;margin-bottom:6px}
+  .divider{height:1px;background:#f0f0f0;margin:14px 0}
+  .kr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+  .kr-box{background:#f8f8f8;border-radius:8px;padding:14px 18px;text-align:center}
+  .kr-name{font-size:13px;color:#666;margin-bottom:8px;font-weight:600}
+  .analysis-section{margin-bottom:14px}
+  .analysis-label{font-size:11px;font-weight:700;color:#888;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+  .analysis-text{font-size:14px;line-height:1.9;color:#333;background:#f8f8f8;padding:14px 16px;border-radius:8px;border-left:3px solid #222}
+  .footer{font-size:11px;color:#bbb;text-align:right;margin-top:10px}
 </style>
 </head>
 <body>
-<h1>📊 마켓 인사이드</h1>
-<p class="date">2026년 04월 28일 발행</p>
+<div class="wrap">
 
-<div class="card">
-  <h2>🇺🇸 미국 시장</h2>
-  <table>
-    <tr><th>지수/지표</th><th>현재가</th></tr>
-    <tr><td>다우</td><td><span style="color:#3182ce">49167.79 (-0.13%)</span></td></tr>
-    <tr><td>나스닥</td><td><span style="color:#e53e3e">24887.1 (+0.2%)</span></td></tr>
-    <tr><td>S&amp;P500</td><td><span style="color:#e53e3e">7173.91 (+0.12%)</span></td></tr>
-    <tr><td>WTI 유가</td><td><span style="color:#e53e3e">97.01 (+0.0%)</span></td></tr>
-    <tr><td>달러인덱스</td><td><span style="color:#e53e3e">98.48 (+0.0%)</span></td></tr>
-    <tr><td>원달러환율</td><td><span style="color:#3182ce">1473.28 (-0.1%)</span></td></tr>
-    <tr><td>미국채 10년</td><td><span style="color:#e53e3e">4.34 (+0.6%)</span></td></tr>
-  </table>
+<div class="header">
+  <h1>📊 마켓 인사이드</h1>
+  <div class="sub">2026년 04월 28일 화요일 · 자동 생성 리포트</div>
 </div>
 
 <div class="card">
-  <h2>🇰🇷 국내 시장 (직전 거래일)</h2>
-  <table>
-    <tr><th>지수</th><th>현재가</th></tr>
-    <tr><td>코스피</td><td><span style="color:#e53e3e">6665.46 (+0.0%)</span></td></tr>
-    <tr><td>코스닥</td><td><span style="color:#e53e3e">1212.36 (+0.0%)</span></td></tr>
-  </table>
+  <div class="card-title">🇺🇸 전일 미국 시장</div>
+  <div class="index-grid">
+    <div class="idx-box"><div class="idx-name">다우존스</div><span style="font-size:15px;font-weight:500;color:#2471a3">49167.79</span><br><span style="font-size:12px;color:#2471a3">-0.13%</span></div>
+    <div class="idx-box"><div class="idx-name">나스닥</div><span style="font-size:15px;font-weight:500;color:#c0392b">24887.1</span><br><span style="font-size:12px;color:#c0392b">+0.2%</span></div>
+    <div class="idx-box"><div class="idx-name">S&amp;P 500</div><span style="font-size:15px;font-weight:500;color:#c0392b">7173.91</span><br><span style="font-size:12px;color:#c0392b">+0.12%</span></div>
+  </div>
+  <div class="macro-grid">
+    <div class="idx-box"><div class="idx-name">WTI 유가</div><span style="font-size:15px;font-weight:500;color:#c0392b">$97.07</span><br><span style="font-size:12px;color:#c0392b">+0.0%</span></div>
+    <div class="idx-box"><div class="idx-name">달러인덱스</div><span style="font-size:15px;font-weight:500;color:#c0392b">98.49</span><br><span style="font-size:12px;color:#c0392b">+0.0%</span></div>
+    <div class="idx-box"><div class="idx-name">원달러환율</div><span style="font-size:15px;font-weight:500;color:#2471a3">1,473원</span><br><span style="font-size:12px;color:#2471a3">-0.11%</span></div>
+    <div class="idx-box"><div class="idx-name">미국채 10년</div><span style="font-size:15px;font-weight:500;color:#c0392b">4.34%</span><br><span style="font-size:12px;color:#c0392b">+0.6%</span></div>
+  </div>
+  <div class="divider"></div>
+  <div class="analysis-section">
+    <div class="analysis-label">해외 시장 특징</div>
+    <div class="analysis-text">미국 시장은 다우 지수가 0.13% 하락한 49167.79로 마감하였고, 나스닥은 0.2% 상승한 24887.1로 장을 마감하였다. S&P500 역시 0.12% 상승한 7173.91을 기록하며 강세를 보였다. 이는 기술 주가의 강세가 전체 시장의 상승을 이끌었다는 것을 의미한다. 또한 WTI는 0.0% 변동 없이 97.07로 유지되었고, 달러인덱스 역시 0.0% 변동 없이 98.49를 기록하였으며, 미국채 10Y 수익률은 0.6% 상승한 4.34를 기록하였다. 이러한 변동은 미국 경제의 강세와 금리 상승에 대한 기대감이 반영된 것으로 보인다. 특히 나스닥의 상승은 기술 주가의 회복세를 보여주고 있으며, 이는 미국 경제의 지속적인 성장 가능성을 암시한다.</div>
+  </div>
 </div>
 
 <div class="card">
-  <h2>📝 시황 분석 및 전망</h2>
-  <div class="analysis">1. 전일海外 시장은 나스닥과 S&P500이 소폭 상승한 반면 다우는 하락했다. 미국 채권수익률은 상승했고, 달러인덱스는 변동이なかった. WTI유가는 보합세를 보였다.<br><br>2. 전일 국내 시장은 코스피와 코스닥이 변동이 없었다. 장중에는 특징적인 움직임이 보이지 않았다.<br><br>3. 오늘 시황 전망에서는 미국 채권수익률 상승과 나스닥 상승이 계속될 가능성이 있다. 투자 대응에서는 안정적인 자산에 대한 관심을 높이고, 국제 금융시장의 변동성에 주의가 필요할 것으로 보인다.</div>
+  <div class="card-title">🇰🇷 전일 국내 시장</div>
+  <div class="kr-grid">
+    <div class="kr-box"><div class="kr-name">코스피</div><span style="font-size:16px;font-weight:500;color:#c0392b">6,656.65P</span><br><span style="font-size:12px;color:#c0392b">+0.0%</span></div>
+    <div class="kr-box"><div class="kr-name">코스닥</div><span style="font-size:16px;font-weight:500;color:#c0392b">1,211.35P</span><br><span style="font-size:12px;color:#c0392b">+0.0%</span></div>
+  </div>
+  <div class="analysis-section">
+    <div class="analysis-label">국내 시장 특징</div>
+    <div class="analysis-text">국내 시장 분석 데이터를 불러오는 중입니다.</div>
+  </div>
 </div>
 
+<div class="card">
+  <div class="card-title">📋 오늘 시황 전망 및 투자 대응</div>
+  <div class="analysis-section">
+    <div class="analysis-text">전망 데이터를 불러오는 중입니다.</div>
+  </div>
+</div>
+
+<div class="footer">데이터 출처: yfinance · AI 분석: Groq (llama-3.3-70b) · 2026년 04월 28일 자동 발행</div>
+</div>
 </body>
 </html>
