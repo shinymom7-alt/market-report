@@ -1,0 +1,4 @@
+yfinance
+groq
+requests
+beautifulsoup4
