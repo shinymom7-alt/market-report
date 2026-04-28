@@ -6,10 +6,10 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime, timedelta
-from google import genai
+from groq import Groq
 
 # ── 환경변수에서 API 키 가져오기 ──────────────────────
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 GMAIL_USER        = os.environ.get("GMAIL_USER")
 GMAIL_PASSWORD    = os.environ.get("GMAIL_PASSWORD")
 RECIPIENTS        = os.environ.get("RECIPIENTS", "").split(",")
@@ -67,7 +67,7 @@ def fetch_kr_market():
 
 # ── 3. Claude AI로 시황 분석 생성 ─────────────────────
 def generate_report(us, kr):
-    client = genai.Client(api_key=GEMINI_API_KEY)
+    client = Groq(api_key=GROQ_API_KEY)
 
     prompt = f"""
 아래는 오늘의 시장 데이터입니다.
@@ -86,11 +86,12 @@ def generate_report(us, kr):
 
 간결하고 핵심만 담아주세요.
 """
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=prompt
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=1500
     )
-    return response.text
+    return response.choices[0].message.content
 
 # ── 4. HTML 리포트 생성 ───────────────────────────────
 def build_html(us, kr, analysis):
