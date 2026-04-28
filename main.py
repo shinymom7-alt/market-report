@@ -6,10 +6,10 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime, timedelta
-import anthropic
+import google.generativeai as genai
 
 # ── 환경변수에서 API 키 가져오기 ──────────────────────
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 GMAIL_USER        = os.environ.get("GMAIL_USER")
 GMAIL_PASSWORD    = os.environ.get("GMAIL_PASSWORD")
 RECIPIENTS        = os.environ.get("RECIPIENTS", "").split(",")
@@ -67,10 +67,11 @@ def fetch_kr_market():
 
 # ── 3. Claude AI로 시황 분석 생성 ─────────────────────
 def generate_report(us, kr):
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    genai.configure(api_key=GEMINI_API_KEY)
+    model = genai.GenerativeModel("gemini-1.5-flash")
 
     prompt = f"""
-아래는 오늘의 시장 데이터입니다. 
+아래는 오늘의 시장 데이터입니다.
 박병창 마켓 인사이드 스타일로 시황 분석 리포트를 작성해주세요.
 
 [미국 시장]
@@ -86,12 +87,8 @@ def generate_report(us, kr):
 
 간결하고 핵심만 담아주세요.
 """
-    message = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=1500,
-        messages=[{"role": "user", "content": prompt}]
-    )
-    return message.content[0].text
+    response = model.generate_content(prompt)
+    return response.text
 
 # ── 4. HTML 리포트 생성 ───────────────────────────────
 def build_html(us, kr, analysis):
