@@ -6,7 +6,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime, timedelta
-import google.generativeai as genai
+from google import genai
 
 # ── 환경변수에서 API 키 가져오기 ──────────────────────
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -67,8 +67,7 @@ def fetch_kr_market():
 
 # ── 3. Claude AI로 시황 분석 생성 ─────────────────────
 def generate_report(us, kr):
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    client = genai.Client(api_key=GEMINI_API_KEY)
 
     prompt = f"""
 아래는 오늘의 시장 데이터입니다.
@@ -87,7 +86,10 @@ def generate_report(us, kr):
 
 간결하고 핵심만 담아주세요.
 """
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
     return response.text
 
 # ── 4. HTML 리포트 생성 ───────────────────────────────
