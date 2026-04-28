@@ -2,9 +2,9 @@ name: 마켓 인사이드 자동 리포트
 
 on:
   schedule:
-    - cron: '30 21 * * 1-5'   # 서머타임 한국 오전 6:30
-    - cron: '30 22 * * 1-5'   # 표준시   한국 오전 7:30
-  workflow_dispatch:           # 수동 실행 버튼 (테스트용)
+    - cron: '30 21 * * 1-5'
+    - cron: '30 22 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,11 +21,11 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 리포트 실행
-   env:
-          GROQ_API_KEY:  ${{ secrets.GROQ_API_KEY }}
-          GMAIL_USER:    ${{ secrets.GMAIL_USER }}
+        env:
+          GROQ_API_KEY:   ${{ secrets.GROQ_API_KEY }}
+          GMAIL_USER:     ${{ secrets.GMAIL_USER }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
-          RECIPIENTS:    ${{ secrets.RECIPIENTS }}
+          RECIPIENTS:     ${{ secrets.RECIPIENTS }}
         run: python main.py
 
       - name: GitHub Pages 배포
